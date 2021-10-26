@@ -72,7 +72,7 @@ namespace GenericWebAPI.Repositories
         public async Task<ResponseWrapper<Car>> UpdateCarAsync(DatabaseContext databaseContext, Car car, CancellationToken cancellationToken = default(CancellationToken))
         {
             var result = await GetCarAsync(databaseContext, car.Guid, cancellationToken);
-            if (!result.Suceeded) return result;
+            if (!result.Succeeded) return result;
 
             var existing = result.Content;
 
@@ -97,7 +97,7 @@ namespace GenericWebAPI.Repositories
         public async Task<ResponseWrapper> DeleteCarAsync(DatabaseContext databaseContext, Guid identifier, CancellationToken cancellationToken = default(CancellationToken))
         {
             var result = await GetCarAsync(databaseContext, identifier, cancellationToken);
-            if (!result.Suceeded) return new ResponseWrapper { Status = result.Status };
+            if (!result.Succeeded) return new ResponseWrapper { Status = result.Status };
 
             databaseContext.Cars.Remove(result.Content);
             await databaseContext.SaveChangesAsync(cancellationToken);

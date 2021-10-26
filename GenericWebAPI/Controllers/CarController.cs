@@ -55,7 +55,7 @@ namespace GenericWebAPI.Controllers
         {
             var result = await _CarService.GetCarAsync(identifier, cancellationToken);
 
-            if (!result.Suceeded) return new StatusCodeResult((int)result.Status);
+            if (!result.Succeeded) return new StatusCodeResult((int)result.Status);
 
             return new OkObjectResult(result.Content);
         }
@@ -71,7 +71,7 @@ namespace GenericWebAPI.Controllers
         {
             var result = await _CarService.CreateCarAsync(car, cancellationToken);
 
-            if (!result.Suceeded) return new StatusCodeResult((int)result.Status);
+            if (!result.Succeeded) return new StatusCodeResult((int)result.Status);
 
             return new OkObjectResult(result.Content);
         }
@@ -87,7 +87,7 @@ namespace GenericWebAPI.Controllers
         {
             var result = await _CarService.UpdateCarAsync(car, cancellationToken);
 
-            if (!result.Suceeded) return new StatusCodeResult((int)result.Status);
+            if (!result.Succeeded) return new StatusCodeResult((int)result.Status);
 
             return new OkObjectResult(result.Content);
         }

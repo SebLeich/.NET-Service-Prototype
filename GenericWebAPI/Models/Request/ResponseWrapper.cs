@@ -4,7 +4,7 @@
     {
         public System.Net.HttpStatusCode? Status { get; set; }
 
-        public bool Suceeded
+        public bool Succeeded
         {
             get
             {
@@ -19,7 +19,7 @@
 
         public T Content { get; set; }
 
-        public bool Suceeded
+        public bool Succeeded
         {
             get
             {
